@@ -27,8 +27,7 @@ body {
 #topTitle {/* Tamaño del texto del título */
     font-family: 'Pacifico', cursive; /* Estilo de fuente */
     color: #e44d26; /* Color rojo navideño */
-    text-align: center; /* Alineación del texto al centro */
-    margin-top: 15%; /* Ajusta el margen superior según sea necesario */
+    text-align: center; /* Alineación del texto al centro *//* Ajusta el margen superior según sea necesario */
 }
 
 .container {
@@ -193,7 +192,7 @@ body {
 
 @media only screen and (min-width: 845px) {
     #topTitle {
-
         font-size: 60px; /* Tamaño del texto del título para PC */
+        margin-top: 15%; 
     }
 }
