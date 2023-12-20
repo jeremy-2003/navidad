@@ -24,8 +24,7 @@ body {
     width: 100%;
 }
 
-#topTitle {
-    font-size: 32px; /* Tamaño del texto del título */
+#topTitle {/* Tamaño del texto del título */
     font-family: 'Pacifico', cursive; /* Estilo de fuente */
     color: #e44d26; /* Color rojo navideño */
     text-align: center; /* Alineación del texto al centro */
@@ -131,21 +130,6 @@ body {
     cursor: pointer;
 }
 
-
-@media only screen and (max-width: 390px) {
-    .container:before {
-        padding: 20px; /* Ajusta el padding para adaptarse a pantallas más pequeñas */
-    }
-
-    #countdown {
-        font-size: 24px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
-    }
-
-    .popup-content {
-        padding: 10px; /* Ajusta el padding del popup para pantallas más pequeñas */
-    }
-}
-
 #destelloContainer {
     display: none;
     position: fixed;
@@ -185,5 +169,31 @@ body {
 
     .popup-content {
         padding: 15px; /* Ajusta el padding del popup para pantallas medianas */
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .container:before {
+        padding: 20px; /* Ajusta el padding para adaptarse a pantallas más pequeñas */
+    }
+
+    #topTitle {
+        font-size: 32px; /* Tamaño del texto del título para iPhone 12 */
+        margin-top: 40%;
+    }
+
+    #countdown {
+        font-size: 24px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    }
+
+    .popup-content {
+        padding: 10px; /* Ajusta el padding del popup para pantallas más pequeñas */
+    }
+}
+
+@media only screen and (min-width: 845px) {
+    #topTitle {
+
+        font-size: 60px; /* Tamaño del texto del título para PC */
     }
 }

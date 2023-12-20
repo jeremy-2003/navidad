@@ -16,7 +16,7 @@ function updateCountdown() {
         isGiftButtonEnabled = true;
         document.getElementById('giftButton').removeAttribute('disabled');
         document.getElementById('giftButton').classList.add('active-gift');
-        document.getElementById('topTitle').textContent = "¡Feliz Navidad mi amor!";
+        document.getElementById('topTitle').innerHTML = "¡Feliz Navidad mi amor!<br>F ❤ J";
     } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -61,18 +61,25 @@ function closePopup() {
 }
 
 // Función para cambiar el fondo entre dos imágenes
+// Función para cambiar el fondo entre dos imágenes
 function changeBackground() {
     const body = document.body;
+    const topTitle = document.getElementById('topTitle'); // Agregamos esta línea para obtener el elemento del título
+
     const currentBackground = body.style.backgroundImage;
 
     if (currentBackground.includes('fondo1')) {
         body.style.backgroundImage = 'url("img/fondo2.jpg")';
+        topTitle.style.color = '#e44d26'; // Cambiamos el color a rojo cuando se usa fondo2
     } else if (currentBackground.includes('fondo2')) {
         body.style.backgroundImage = 'url("img/fondo3.jpg")';
+        topTitle.style.color = '#00ff00'; // Cambiamos el color a verde cuando se usa fondo3
     } else {
         body.style.backgroundImage = 'url("img/fondo1.jpg")';
+        topTitle.style.color = '#e44d26'; // Volvemos a cambiar a rojo cuando se usa fondo1
     }
 }
+
 
 
 // Ocultar el popup y establecer el fondo inicial al cargar la página
