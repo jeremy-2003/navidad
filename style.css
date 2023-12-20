@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +13,6 @@ body {
     flex-direction: column; /* Añadido para que los elementos se alineen verticalmente */
 }
 
-
 .top-container {
     display: flex;
     justify-content: center;
@@ -24,10 +24,11 @@ body {
     width: 100%;
 }
 
-#topTitle {/* Tamaño del texto del título */
+#topTitle {
     font-family: 'Pacifico', cursive; /* Estilo de fuente */
     color: #e44d26; /* Color rojo navideño */
-    text-align: center; /* Alineación del texto al centro *//* Ajusta el margen superior según sea necesario */
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 15%; /* Ajusta el margen superior según sea necesario */
 }
 
 .container {
@@ -36,6 +37,11 @@ body {
     position: relative; /* Añadido para posicionar correctamente el fondo del contador */
     margin-top: 10vh; /* Ajusta el margen superior para que el contador no se solape con el título */
     z-index: 1; /* Añadido para que el contenedor del contador esté sobre el fondo */
+}
+
+#tituloContador {
+    margin-top: 0;
+    font-family: 'Pacifico', cursive;
 }
 
 .container:before {
@@ -53,7 +59,6 @@ body {
     border-radius: 15px;
     border: 2px solid #157715;
 }
-
 
 #countdown {
     font-size: 36px;
@@ -137,6 +142,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Permitir que los destellos no afecten a los elementos debajo */
+    z-index: 2;
 }
 
 .destello {
@@ -145,6 +151,7 @@ body {
     height: 100%;
     opacity: 0;
     animation: destelloAnim 4s linear 1; /* Duración de la animación: 4 segundos, lineal, solo una vez */
+
 }
 
 @keyframes destelloAnim {
@@ -169,11 +176,22 @@ body {
     .popup-content {
         padding: 15px; /* Ajusta el padding del popup para pantallas medianas */
     }
+
+    #giftButton {
+        font-size: 20px; /* Tamaño del texto para pantallas medianas */
+        padding: 15px 30px; /* Ajusta el padding del botón para pantallas medianas */
+        margin-top: 30px; /* Ajusta el margen superior para pantallas medianas */
+    }
 }
 
 @media only screen and (max-width: 390px) {
     .container:before {
         padding: 20px; /* Ajusta el padding para adaptarse a pantallas más pequeñas */
+    }
+
+    #tituloContador {
+        font-size: 32px; /* Tamaño del texto del título para iPhone 12 */
+        margin-top: 0%;
     }
 
     #topTitle {
@@ -188,11 +206,37 @@ body {
     .popup-content {
         padding: 10px; /* Ajusta el padding del popup para pantallas más pequeñas */
     }
+
+    #giftButton {
+        font-size: 16px; /* Tamaño del texto para pantallas más pequeñas */
+        padding: 10px 20px; /* Ajusta el padding del botón para pantallas más pequeñas */
+        margin-top: 20px; /* Ajusta el margen superior para pantallas más pequeñas */
+    }
 }
 
 @media only screen and (min-width: 845px) {
     #topTitle {
         font-size: 60px; /* Tamaño del texto del título para PC */
         margin-top: 15%; 
+    }
+
+    #tituloContador {
+        font-size: 60px; /* Tamaño del texto del título para PC */
+        margin-top: 0%; 
+    }
+
+    #countdown {
+        font-size: 48px; /* Tamaño del texto para PC */
+    }
+
+    .popup-content {
+        padding: 30px; /* Ajusta el padding del popup para PC */
+        max-width: 600px; /* Ajusta el ancho máximo del popup para PC */
+    }
+
+    #giftButton {
+        font-size: 24px; /* Tamaño del texto para PC */
+        padding: 20px 40px; /* Ajusta el padding del botón para PC */
+        margin-top: 40px; /* Ajusta el margen superior para PC */
     }
 }
