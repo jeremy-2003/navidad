@@ -1,5 +1,5 @@
 // Establecer la fecha de Navidad (25 de diciembre)
-const christmasDate = new Date('December 20, 2023 12:26:00').getTime();
+const christmasDate = new Date('December 25, 2023 00:00:00').getTime();
 
 // Variables globales
 let countdownInterval;
