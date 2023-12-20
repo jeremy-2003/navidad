@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    flex-direction: column; /* Añadido para que los elementos se alineen verticalmente */
+}
+
+
+.top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Ajusta la altura según sea necesario */
+    position: absolute; /* Posición absoluta para superponerlo encima del contenedor */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#topTitle {
+    font-size: 32px; /* Tamaño del texto del título */
+    font-family: 'Pacifico', cursive; /* Estilo de fuente */
+    color: #e44d26; /* Color rojo navideño */
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 15%; /* Ajusta el margen superior según sea necesario */
+}
+
+.container {
+    text-align: center;
+    color: white; /* Color de texto para el contador navideño */
+    position: relative; /* Añadido para posicionar correctamente el fondo del contador */
+    margin-top: 10vh; /* Ajusta el margen superior para que el contador no se solape con el título */
+    z-index: 1; /* Añadido para que el contenedor del contador esté sobre el fondo */
+}
+
+.container:before {
+    justify-content: center;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    position: absolute;
+    top: 50%; /* Ajusta el valor de top para centrar verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ajusta el traslado para centrar tanto vertical como horizontalmente */
+    width: calc(100% - 30px);
+    height: 100%;
+    z-index: -1;
+    border-radius: 15px;
+    border: 2px solid #157715;
+}
+
+
+#countdown {
+    font-size: 36px;
+    font-weight: bold;
+    color: #e44d26; /* Color rojo navideño */
+    z-index: 1; /* Situar sobre el fondo con transparencia */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 2;
+}
+
+.popup.active {
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20% auto;
+    border-radius: 8px;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.popup-content p {
+    font-family: 'Pacifico', cursive;
+}
+
+.popup.active .popup-content {
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+#giftButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: #e44d26; /* Color rojo navideño */
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#giftButton:disabled {
+    background-color: #ccc; /* Color gris para el estado desactivado */
+    cursor: not-allowed;
+}
+
+/* Nueva clase para el botón activado */
+#giftButton.active-gift {
+    background-color: #4CAF50; /* Color verde para el botón activado */
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 390px) {
+    .container:before {
+        padding: 20px; /* Ajusta el padding para adaptarse a pantallas más pequeñas */
+    }
+
+    #countdown {
+        font-size: 24px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    }
+
+    .popup-content {
+        padding: 10px; /* Ajusta el padding del popup para pantallas más pequeñas */
+    }
+}
+
+#destelloContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permitir que los destellos no afecten a los elementos debajo */
+}
+
+.destello {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: destelloAnim 4s linear 1; /* Duración de la animación: 4 segundos, lineal, solo una vez */
+}
+
+@keyframes destelloAnim {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Consulta de medios para iPhone 12 en modo horizontal */
+@media only screen and (min-width: 391px) and (max-width: 844px) {
+    .container:before {
+        padding: 30px; /* Ajusta el padding para adaptarse a pantallas medianas */
+    }
+
+    #countdown {
+        font-size: 30px; /* Ajusta el tamaño del texto para pantallas medianas */
+    }
+
+    .popup-content {
+        padding: 15px; /* Ajusta el padding del popup para pantallas medianas */
+    }
+}

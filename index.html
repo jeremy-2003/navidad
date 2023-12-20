@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap">
+    <title>Contador Navideño</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1 id="topTitle">Esperando nuestra primera navidad juntos</h1>
+    </div>
+    <div class="container">
+        <h1 style="margin-top: 0;">Contador Navideño</h1>
+        <div id="countdown"></div>
+        <button id="giftButton" disabled onclick="openGift()">🎁 Abrir Regalo</button>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 style="font-family: 'Pacifico', cursive; font-weight: bold;">¡Feliz Navidad!</h2>
+            <p id="popup-text"></p>
+        </div>
+    </div>    
+
+    <div id="destelloContainer">
+        <img class="destello" src="img/destello1.png" alt="Destello 1">
+        <img class="destello" src="img/destello2.png" alt="Destello 2">
+        <img class="destello" src="img/destello3.png" alt="Destello 3">
+        <img class="destello" src="img/destello4.png" alt="Destello 4">
+    </div>
+
+    <script type="text/javascript" src="js/nieve.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
