@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap">
     <title>Contador Navideño</title>
 </head>
+
 <body>
     <div class="top-container">
         <h1 id="topTitle">Esperando nuestra primera navidad juntos... <br> F ❤ J</h1>
@@ -22,8 +24,21 @@
             <span class="close" onclick="closePopup()">&times;</span>
             <h2 style="font-family: 'Pacifico', cursive; font-weight: bold;">¡Feliz Navidad!</h2>
             <p id="popup-text"></p>
+            <!-- Agrega esta sección dentro del popup-content después del párrafo -->
+            <div id="minijuego-container">
+                <h3>Resuelve el Puzle:</h3>
+                <div id="puzzle" class="puzzle">
+                    <!-- Celdas del puzle se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+            <!-- Agrega esta sección después del enlace de "Siguiente" -->
+            <div id="siguienteBtnContainer">
+                <button id="siguienteBtn" disabled>Siguiente</button>
+            </div>
+
+
         </div>
-    </div>    
+    </div>
 
     <div id="destelloContainer">
         <img class="destello" src="img/destello1.png" alt="Destello 1">
@@ -35,4 +50,5 @@
     <script type="text/javascript" src="js/nieve.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

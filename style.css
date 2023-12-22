@@ -85,15 +85,19 @@ body {
 }
 
 .popup-content {
-    background-color: #fff;
+    background-image: url('img/carta.jpg'); /* Ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
     padding: 20px;
     max-width: 400px;
-    margin: 20% auto;
+    margin: 7% auto;
     border-radius: 8px;
     position: relative;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
+
+
 
 .popup-content p {
     font-family: 'Pacifico', cursive;
@@ -239,4 +243,66 @@ body {
         padding: 20px 40px; /* Ajusta el padding del botón para PC */
         margin-top: 40px; /* Ajusta el margen superior para PC */
     }
+}
+
+
+/* Agrega estos estilos al final de tu archivo de estilo */
+#minijuego-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Ajusta la cantidad de espacio superior según tus preferencias */
+}
+
+.puzzle {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Ajusta el tamaño de las columnas */
+    grid-gap: 5px;
+}
+
+.puzzle-cell {
+    width: 100px; /* Ajusta el tamaño de las celdas */
+    height: 100px; /* Ajusta el tamaño de las celdas */
+    overflow: hidden; /* Asegura que las imágenes no sobresalgan del contenedor */
+    cursor: pointer;
+    transition: background-position 0.3s ease-in-out;
+}
+
+.puzzle-img {
+    width: 100%; /* Ajusta la imagen para llenar el contenedor */
+    height: 100%; /* Ajusta la imagen para llenar el contenedor */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+
+.puzzle-solved {
+    pointer-events: none;
+}
+
+#siguienteBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajusta la cantidad de espacio superior según tus preferencias */
+}
+
+#siguienteBtn {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #cc0000; /* Ajusta el color de fondo según tus preferencias */
+    color: #ffffff; /* Ajusta el color del texto según tus preferencias */
+    transition-duration: 0.4s;
+}
+
+#siguienteBtn:disabled {
+    cursor: not-allowed;
+    background-color: #dddddd; /* Cambia el color de fondo cuando está deshabilitado */
+    color: #aaaaaa; /* Cambia el color del texto cuando está deshabilitado */
+}
+
+#siguienteBtn:not(:disabled):hover {
+    background-color: #ffffff;
+    color: #cc0000;
 }
