@@ -1,5 +1,5 @@
 // Establecer la fecha de Navidad (25 de diciembre)
-const christmasDate = new Date('December 25, 2023 00:00:00').getTime();
+const christmasDate = new Date('December 20, 2023 00:00:00').getTime();
 
 // Variables globales
 let countdownInterval;
@@ -40,9 +40,9 @@ function openGift() {
 
 // Variables para gestionar los mensajes divididos
 const messages = [
-    "¡Feliz Navidad!\nAquí está la primera parte de tu carta de Navidad...",
+    "Si ya puedes leer esto es porque ya son las 00:00 o más mi amor dddddddddddddddddddddddddddddddddd.",
     "Espero que esta temporada te llene de alegría y amor...",
-    "Con todo mi cariño,\n[Tu Nombre]"
+    "Con todo mi cariño, [Tu Nombre]"
 ];
 let currentMessageIndex = 0;
 
@@ -74,9 +74,9 @@ function navigateMessages(direction) {
 function updatePopupText() {
     const popupText = document.getElementById('popup-text');
     const currentMessage = messages[currentMessageIndex];
+    popupText.style.whiteSpace = 'pre-wrap'; // Permitir saltos de línea automáticos
     typeWriter(currentMessage, popupText);
 }
-
 
 // Función para mostrar el popup con transición gradual
 function showPopup() {
@@ -155,19 +155,18 @@ function openGift() {
 }
 
 // Función para el efecto de escritura
-function typeWriter(text) {
-    const popupText = document.getElementById('popup-text');
-    popupText.innerText = ''; // Limpiar el contenido actual
+function typeWriter(text, element) {
+    element.innerHTML = ''; // Limpiar el contenido actual
 
     let index = 0;
 
     function type() {
         if (index < text.length) {
-            if (text.charAt(index) === ' ') {
-                // Agregar código de espacio HTML para representar espacios
-                popupText.innerHTML += '&nbsp;';
+            if (text.charAt(index) === '\n') {
+                // Agregar un elemento <br> para representar saltos de línea
+                element.appendChild(document.createElement('br'));
             } else {
-                popupText.innerText += text.charAt(index);
+                element.innerHTML += text.charAt(index);
             }
             index++;
             setTimeout(type, 50);

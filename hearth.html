@@ -36,6 +36,16 @@
             text-align: center;
         }
 
+        #second-typed-output {
+            position: absolute;
+            font-size: 64px;
+            font-weight: bold;
+            bottom: -5px;
+            left: 50%;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+
         .star {
             position: absolute;
             width: 4px;
@@ -62,7 +72,9 @@
         }
 
         @keyframes twinkle {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0;
             }
 
@@ -76,7 +88,15 @@
             #typed-output {
                 font-size: 24px;
                 font-weight: bold;
-                white-space: pre-wrap; /* Permite saltos de línea */
+                white-space: pre-wrap;
+                /* Permite saltos de línea */
+            }
+
+            #second-typed-output{
+                font-size: 24px;
+                font-weight: bold;
+                bottom: 100px;
+                white-space: pre-wrap;
             }
 
             .gold-star {
@@ -88,10 +108,18 @@
 
 <body>
     <h1 id="typed-output"></h1>
+    <h1 id="second-typed-output"></h1>
+
     <img src="img/corazon.gif" alt="Corazón animado">
 
+    <!-- Estrellas en la parte superior -->
     <div class="star gold-star" style="top: 20px; left: 20px;">★</div>
     <div class="star gold-star" style="top: 20px; right: 55px;">★</div>
+
+    <!-- Estrellas en la parte inferior -->
+    <div class="star gold-star" style="bottom: 75px; left: 20px;">★</div>
+    <div class="star gold-star" style="bottom: 75px; right: 55px;">★</div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
@@ -109,7 +137,22 @@
             }
         };
 
+        var secondMessageOptions = {
+            strings: ["Por muchas más navidades a tu lado mi princesa ❤", "Por muchas más navidades a tu lado mi amor ❤", "Por muchas más navidades a tu lado mi niña ❤", "Por muchas más navidades a tu lado mi reyna ❤", "Por muchas más navidades a tu lado mi vida ❤"],
+            typeSpeed: 70,
+            backSpeed: 40,
+            backDelay: 1000,
+            startDelay: 500,
+            showCursor: false,
+            onComplete: function (self) {
+                setTimeout(function () {
+                    self.reset();
+                }, 2000);
+            }
+        };
+
         var typed = new Typed("#typed-output", options);
+        var secondTyped = new Typed("#second-typed-output", secondMessageOptions);
 
         function createStar() {
             const star = document.createElement("div");
@@ -117,6 +160,11 @@
             star.style.top = `${Math.random() * 100}vh`;
             star.style.left = `${Math.random() * 100}vw`;
             document.body.appendChild(star);
+        }
+
+        function updateSecondMessage() {
+            // Actualiza el mensaje secundario
+            secondTyped.start();
         }
 
         setInterval(createStar, 250);
