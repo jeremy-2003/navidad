@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Navideño</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000000, #333333);
+            color: white;
+            font-family: 'Lobster', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 10px;
+        }
+
+        #typed-output {
+            white-space: pre;
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: transparent;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: twinkle 3s infinite;
+        }
+
+        .red-star {
+            box-shadow: 0 0 8px 4px rgba(255, 0, 0, 0.8);
+            /* Ajuste la sombra para que las estrellas sean más grandes */
+        }
+
+        .green-star {
+            box-shadow: 0 0 8px 4px rgba(0, 255, 0, 0.8);
+            /* Ajuste la sombra para que las estrellas sean más grandes */
+        }
+
+        .gold-star {
+            font-size: 48px;
+            color: rgba(255, 223, 0, 0.8);
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Estilos específicos para iPhone 12 y dispositivos similares */
+        @media only screen and (max-width: 390px) {
+            #typed-output {
+                font-size: 24px;
+                font-weight: bold;
+                white-space: pre-wrap; /* Permite saltos de línea */
+            }
+
+            .gold-star {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="typed-output"></h1>
+    <img src="img/corazon.gif" alt="Corazón animado">
+
+    <div class="star gold-star" style="top: 20px; left: 20px;">★</div>
+    <div class="star gold-star" style="top: 20px; right: 55px;">★</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var options = {
+            strings: ["Feliz primera navidad a tu lado mi amor", "Feliz primera navidad a tu lado Francis ❤"],
+            typeSpeed: 70,
+            backSpeed: 40,
+            backDelay: 1000,
+            startDelay: 500,
+            showCursor: false,
+            onComplete: function (self) {
+                setTimeout(function () {
+                    self.reset();
+                }, 2000);
+            }
+        };
+
+        var typed = new Typed("#typed-output", options);
+
+        function createStar() {
+            const star = document.createElement("div");
+            star.className = Math.random() < 0.5 ? "star red-star" : "star green-star";
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(star);
+        }
+
+        setInterval(createStar, 250);
+    </script>
+</body>
+
+</html>

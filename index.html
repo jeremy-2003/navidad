@@ -24,6 +24,10 @@
             <span class="close" onclick="closePopup()">&times;</span>
             <h2 style="font-family: 'Pacifico', cursive; font-weight: bold;">¡Feliz Navidad!</h2>
             <p id="popup-text"></p>
+            <div id="nav-arrows-container">
+                <img id="prevBtn" class="nav-arrow" src="img/izquierda.png" alt="Flecha Izquierda" onclick="navigateMessages(-1)" class="nav-arrow">
+                <img id="nextBtn" class="nav-arrow" src="img/derecha.png" alt="Flecha Derecha" onclick="navigateMessages(1)" class="nav-arrow">
+            </div>
             <!-- Agrega esta sección dentro del popup-content después del párrafo -->
             <div id="minijuego-container">
                 <h3>Resuelve el Puzle:</h3>
@@ -33,7 +37,7 @@
             </div>
             <!-- Agrega esta sección después del enlace de "Siguiente" -->
             <div id="siguienteBtnContainer">
-                <button id="siguienteBtn" disabled>Siguiente</button>
+                <button id="siguienteBtn" onclick="redireccionarOtroHTML()" disabled>Siguiente</button>
             </div>
 
 

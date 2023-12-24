@@ -37,6 +37,47 @@ function openGift() {
     }
 }
 
+
+// Variables para gestionar los mensajes divididos
+const messages = [
+    "¡Feliz Navidad!\nAquí está la primera parte de tu carta de Navidad...",
+    "Espero que esta temporada te llene de alegría y amor...",
+    "Con todo mi cariño,\n[Tu Nombre]"
+];
+let currentMessageIndex = 0;
+
+// Función para navegar entre mensajes
+function navigateMessages(direction) {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    currentMessageIndex += direction;
+
+    // Deshabilitar el botón de retroceso si es el primer mensaje
+    prevBtn.disabled = currentMessageIndex === 0;
+    prevBtn.style.display = prevBtn.disabled ? 'none' : 'block';  
+
+    // Deshabilitar el botón de avanzar si es el último mensaje
+    nextBtn.disabled = currentMessageIndex === messages.length - 1;
+    nextBtn.style.display = nextBtn.disabled ? 'none' : 'block';  
+    if (currentMessageIndex < 0) {
+        currentMessageIndex = 0;
+    } else if (currentMessageIndex >= messages.length) {
+        currentMessageIndex = messages.length - 1;
+    }
+
+    updatePopupText();
+}
+
+
+// Función para actualizar el texto del popup con el efecto de typeWriter
+function updatePopupText() {
+    const popupText = document.getElementById('popup-text');
+    const currentMessage = messages[currentMessageIndex];
+    typeWriter(currentMessage, popupText);
+}
+
+
 // Función para mostrar el popup con transición gradual
 function showPopup() {
     const popup = document.getElementById('popup');
@@ -45,14 +86,19 @@ function showPopup() {
     // Espera un breve momento antes de añadir la clase
     setTimeout(function () {
         popup.classList.add('active');
+        updatePopupText(); // Muestra el primer mensaje al abrir el popup
+
+        // Deshabilitar el botón de retroceso si es el primer mensaje
+        const prevBtn = document.getElementById('prevBtn');
+        prevBtn.disabled = true;
+        prevBtn.style.display = 'none';  // Ocultar la flecha izquierda
+
+        // Habilitar el botón de avanzar si hay más de un mensaje
+        const nextBtn = document.getElementById('nextBtn');
+        nextBtn.disabled = messages.length <= 1;
     }, 10);
-
-    // Mensaje que se animará con efecto de escritura
-    const message = "¡Feliz Navidad!\nAquí está tu carta de Navidad...\nCon todo mi amor, [Tu Nombre]";
-
-    // Iniciar el efecto de escritura en el párrafo del popup
-    typeWriter(message);
 }
+
 
 // Función para cerrar el popup
 function closePopup() {
@@ -60,7 +106,6 @@ function closePopup() {
     popup.style.display = 'none';
 }
 
-// Función para cambiar el fondo entre dos imágenes
 // Función para cambiar el fondo entre dos imágenes
 function changeBackground() {
     const body = document.body;
@@ -278,3 +323,11 @@ function checkPuzzleSolved() {
 }
 
 initializePuzzle();
+
+document.getElementById('siguienteBtn').addEventListener('click', function () {
+    openNewPage();
+});
+
+function redireccionarOtroHTML() {
+    window.location.href = 'hearth.html';
+}

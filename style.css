@@ -251,7 +251,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Ajusta la cantidad de espacio superior según tus preferencias */
 }
 
 .puzzle {
@@ -305,4 +304,21 @@ body {
 #siguienteBtn:not(:disabled):hover {
     background-color: #ffffff;
     color: #cc0000;
+}
+
+.nav-arrow {
+    width: 30px;  /* Ajusta el ancho según tus preferencias */
+    height: 30px; /* Ajusta la altura según tus preferencias */
+    cursor: pointer;
+    padding:2%;
+}
+
+#nav-arrows-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-arrow:disabled {
+    display: none;
 }
