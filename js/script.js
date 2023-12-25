@@ -40,9 +40,17 @@ function openGift() {
 
 // Variables para gestionar los mensajes divididos
 const messages = [
-    "Si ya puedes leer esto es porque ya son las 00:00 o más mi amor dddddddddddddddddddddddddddddddddd.",
-    "Espero que esta temporada te llene de alegría y amor...",
-    "Con todo mi cariño, [Tu Nombre]"
+    "Oa Oa Oa soy el Jeremy jsjsjs este es el inicio de un pequeño detallito pa ti mi amor :3 jsjsj tal vez necesites un pañuelito mi amor jsjsjs hasta lagrimitas me salio escribirlo bueno te dejo con el resto del mensaje bebe clickea la flechita ➡ para seguir con los mensajitos mi amorcito hermosa.",
+    "Ahora si mi amor jsjsj si ya puedes leer esto es porque ya son las 00:00 o más mi amor primero decirte que pues es una alegria pasar junto a ti esta navidad ❤ y que toy muy feliz de estar a tu ladito jeje...",
+    "Espero la estes pasando muy bien mi amor, sabes que te deseo siempre lo mejor y que eres una gran persona. Eso fue una de las cosas que mas me llamo la atención de ti 👀.",
+    "Te amo con todo mi corazoncito, no sabes cuanto me encanta estar a tu lado cada vez que vemos una serie o salimos jeje cada cosa que hagamos es inolvidable para mi amor y espero hagamos muchas cosas más. :3",
+    "Como siempre nos decimos mi vida el conocer a alguien este año no estaba osea en mis planes pensaba que todo terminaria y normal. Pero conoci a una señorita bueno conoci mas a fondo jsjsjs porque ya te conocia ...",
+    "Bueno conoci a esa señorita que me movio pos el mundo en un tiempo muy rapido pero llegaste a enamorarme, alegrarme, quererme, cuidarme y muchas cosas mas. Y pos tu tambien supiste sacar y tener esa parte de mi.",
+    "Esa parte en la cual solo te quiero cuidar, amar, querer, celebrar cada cosita juntos, seguirte enamorandote, darte detalles, hacer tantos planes que tenemos pendientes y tener muchas experiencias a tu lado mi vida.",
+    "Por eso en este dia especial amor eres mi 24 de Diciembre y espero siga siendo asi por un largo tiempo 👀❤. Se que hoy no puedo estar a tu lado pero estaremos juntos mi amor y quiero que sepas una vez mas lo mucho que Te Amo mi niña :3 ❤",
+    "El tenerte a mi lado siento que puedo hacer y lograr todo jeje en el sentido de que siento tu apoyo en cada meta que tengo mi amor y eso me alegra e ilusiona demasiado, se que estamos muy bien junticos y espero tener esa oportunidad...",
+    "De tenerte muchos años mas en mi vida para poder cumplir los planes que tenemos pendientes, los muchos que se nos ocurriran, celebrar nuestros logros, darnos nuestros gustitos, viajar a lugarcitos y sobre todo darnos mucho mucho amor ❤❤❤",
+    "Este es el finalcito de este mensajito mi vida asi que para seguir con tu otra sorpresita que sha no es tan grande pero tienes que resolver ese puzzle jeje tienes que armar el rompecabeza asi que suerte jsjsjs para probarlo yo me demore un rataso armandolo xd. Te amo :3"
 ];
 let currentMessageIndex = 0;
 
